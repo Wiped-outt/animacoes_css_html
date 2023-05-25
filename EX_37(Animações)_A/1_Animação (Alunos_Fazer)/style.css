@@ -1,0 +1,143 @@
+*, *::after, *::before {box-sizing: border-box;}
+
+.conteudo{
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+
+}
+h1, h2, p {
+    text-align: center;
+}
+
+/*_____________________________________________________________________*/
+/* (1a Animação) Trocar a cor de fundo da tela continuamente */
+/*_____________________________________________________________________*/
+
+/* Etapa 1: Regra de animação (animaFundo) */
+/* Troca a cor de fundo da tela */
+
+@keyframes animaFundo {
+
+    /* Sintaxe from/to: somente para 2 estados*/
+    /* from {background-color: lightblue;}
+    to{background-color: lightgreen;} */
+    0% {background-color: lightblue;}
+    50% {background-color: lightcoral;}
+    100% {background-color: lightgreen;}
+
+}
+
+body {
+    font-family: 'Segoe UI';
+
+    /* Etapa 2: executar/chamar a animação (animaFundo) */
+
+    /* animation-name: animaFundo; Chamada da animação*/
+    /* animation-duration: 5s; Duração */
+    /* animation-interation-count: 3; número de repetições */
+    /* animation-interation-count: infinite; número de repetições */
+    /* animation-direction-count: alternate; Torna mais suave a transição*/
+    /* animation-direction: alternate-reverse; torna mais suave a transição */
+
+    /* Etapa 2: executar/chamar a animação (animaFundo) */
+    
+
+    /* Versão abreviada das linhas acima */
+    animation: animaFundo 3s infinite alternate-reverse;
+
+}
+
+/*_____________________________________________________________________*/
+/* (2a Animação) Faz aparecer o 2o texto com atraso */
+/*_____________________________________________________________________*/
+
+/* Etapa 1: Regra de animação (aparecer) */
+/* Faz aparecer o 2o texto com atraso */
+
+@keyframes aparecer {
+    from {opacity: 0;}
+    to {opacity: 1;}
+
+}
+
+#dois {
+    /* Etapa 2: Executar/chamar a animação (parecer) */
+
+    animation-name: aparecer; /* Chamada da animação */
+    animation-duration: s; /* Duração */
+    animation-delay: 1s; /* Atrasa */
+    animation-fill-mode: backwards; /*Permite que o 2o conteudo apareça depois */
+
+}
+
+/*_____________________________________________________________________*/
+/* (3a Animação) Girar imagem */
+/*_____________________________________________________________________*/
+
+#tres {
+    border: solid 3px;
+    padding: 5px;
+    width: 750px;
+    margin: auto;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+
+}
+
+/* Etapa 1: Regra de animação (animaImagem) */
+/* Girar imagem */
+@keyframes animaImagem {
+
+    from {transform: translateX(0) rotateZ(0);
+    opacity: 0;}
+
+    to {transform: translateX(570px) rotateZ(360deg);
+    opacity: 1;}
+
+}
+
+#tres img {
+    /* Etapa 2: Executar/chamar a animação (animaImagem) */
+
+    animation-name: animaImagem; /* Chamada da animação */
+    animation-duration: 2s; /* Duração */
+    animation-iteration-count: infinite; /* Repeti sempre */
+    /* animation-timing-function: ease-out; Começa rápido e desacelera */
+    animation-timing-function: linear;
+    animation-direction: alternate; /* Vai e volta */
+
+}
+
+/*_____________________________________________________________________*/
+/* (4a animação) Deslizar imagem */
+/*_____________________________________________________________________*/
+
+#quatro {
+    border: solid 3px;
+    padding: 5px;
+    width: 750px;
+    margin: auto;
+    margin-top: 10px;
+}
+/* Etapa 1: Regra de animação (animaImagem2) */
+/* Deslizar imagem */
+@keyframes animaImagem2 {
+    form {transform: translateX(0);}
+    to {transform: translateX(580px);}
+
+
+}
+#quatro img {
+    /* Etapa 2: Executar/chamar a animação (animaImagem2) */
+
+    animation-name: animaImagem2; /* Chamada da animação */
+    animation-duration: 2s; /* Duração */
+    animation-iteration-count: infinite; /* repeti sempre */
+    animation-timing-function: linear;
+    animation-direction: alternate; /* Vai e volta */
+}
